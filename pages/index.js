@@ -3,10 +3,13 @@ import React from "react";
 class Header extends React.Component {
     render() {
         return ( 
-            <section>
-                <h2>Lorem ipsum dolor sit amet</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu massa sit amet augue consectetur ullamcorper non ac massa.</p>
-                <button>Botão</button>
+            <section className="container-header">
+                <div className="container-header__info">
+                    <h2>Lorem ipsum dolor sit amet</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu massa sit amet augue consectetur ullamcorper non ac massa.</p>
+                    <button>Botão</button>
+                </div>
+                <div className="container-header__img"></div>
             </section>
         );
     }
@@ -71,7 +74,7 @@ export default class Principal extends React.Component {
     
     render() {
         return ( 
-            <main>
+            <main className="content">
                 <Header />
                 <Cards />
                 <Contato />

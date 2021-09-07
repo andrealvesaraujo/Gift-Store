@@ -14,6 +14,61 @@
     src: local("Merriweather-Bold"), url("../fonts/Merriweather-Bold.ttf") format("truetype");
 }
 
-main {
+.content {
     font-family: "Merriweather-Regular";
+}
+
+.content .container-header {
+    background-color: var(--bgSite);
+    /* display: grid;
+    grid-column-gap: 5rem;
+    grid-template-columns: 50% 50%; */
+    width: 100%;
+    padding: 5.5rem 2rem 8.8rem 2rem;
+}
+
+.content .container-info {
+
+}
+
+.content .container-header__info h2 {
+    color: var(--title);
+    font-family: "Merriweather-Regular";
+    font-size: 3.2rem;
+    line-height: 4.7rem;
+    margin-bottom: 1.8rem ;
+}
+
+.content .container-header__info p {
+    color: var(--text);
+    font-family: "Lato-Regular";
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    margin-bottom: 3.2rem ;
+}
+
+.content .container-header__info button {
+    background-color: var(--buttonColor);
+    border-radius: .5rem;
+    box-shadow: 0px .5rem .5rem rgba(23, 23, 23, 0.1);
+    color: var(--white);
+    font-family: "Lato-Regular";
+    font-size: 2rem;
+    line-height: 2.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 1.5rem 5rem;
+}
+
+.content .container-header__img {
+    background-image: url("../images/image.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    min-height: 25rem;
+    margin-top: 10rem;
+}
+
+@media(min-width:767.98) {
+    /* TO DO DESTKOP */
 }
