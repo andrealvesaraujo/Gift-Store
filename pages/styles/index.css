@@ -20,9 +20,6 @@
 
 .content .container-header {
     background-color: var(--bgSite);
-    /* display: grid;
-    grid-column-gap: 5rem;
-    grid-template-columns: 50% 50%; */
     width: 100%;
     padding: 5.5rem 2rem 8.8rem 2rem;
 }
@@ -67,6 +64,71 @@
     width: 100%;
     min-height: 25rem;
     margin-top: 10rem;
+}
+
+.content .container-cards {
+    background-color: var(--white300);
+    padding: 7.5rem 2rem;
+    /* display: grid;
+    grid-column-gap: 5rem;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    grid-row-gap: 3rem; */
+}
+
+.content .container-cards .card {
+    background-color: var(--white);
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+}
+
+.content .container-cards .card .area {
+    min-height: 20rem;
+    background: #FF6363;
+}
+
+.content .container-cards .card .area.red {
+    background: #FF6363;
+}
+
+.content .container-cards .card .area.blue {
+    background: #63ECFF;
+}
+
+.content .container-cards .card .area.pink {
+    background: #F363FF;
+}
+
+.content .container-cards .card .area.green {
+    background: #63FF73;
+}
+
+.content .container-cards .card .area.yelow {
+    background: #FFDD63;
+}
+
+.content .container-cards .card .area.purple {
+    background: #6663FF;
+}
+
+
+.content .container-cards .card .text {
+    padding: 2.4rem 3.3rem 3.3rem 3.3rem;
+}
+
+.content .container-cards .card h2 {
+    color: var(--title);
+    font-family: "Merriweather-Bold";
+    font-size: 2.4rem;
+    line-height: 3rem;
+    font-weight: bold;
+    margin-bottom: 2.6rem;
+}
+
+.content .container-cards .card p {
+    color: var(--text);
+    font-family: "Lato-Regular";
+    font-size: 1.8rem;
+    line-height: 3rem;
 }
 
 @media(min-width:767.98) {

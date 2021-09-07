@@ -16,12 +16,15 @@ class Header extends React.Component {
 }
 
 class Card extends React.Component {
+
     render() {
         return ( 
-            <div>
-                <div></div>
-                <div>Titulo do Card</div>
-                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in neque et nisl.</div>
+            <div className="card">
+                <div className={`area ${this.props.color}`}></div>
+                <div className="text">
+                    <h2>Titulo do Card</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in neque et nisl.</p>
+                </div>
             </div>
         );
     }
@@ -30,14 +33,14 @@ class Card extends React.Component {
 class Cards extends React.Component {
     render() {
         return ( 
-            <section>
+            <section className="container-cards">
                 <ul>
-                    <li><Card/></li>
-                    <li><Card/></li>
-                    <li><Card/></li>
-                    <li><Card/></li>
-                    <li><Card/></li>
-                    <li><Card/></li>
+                    <li><Card color={"red"}/></li>
+                    <li><Card color={"blue"}/></li>
+                    <li><Card color={"pink"}/></li>
+                    <li><Card color={"green"}/></li>
+                    <li><Card color={"yelow"}/></li>
+                    <li><Card color={"purple"}/></li>
                 </ul>
             </section>
         );
