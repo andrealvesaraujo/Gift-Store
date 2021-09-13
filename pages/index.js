@@ -47,28 +47,31 @@ class Cards extends React.Component {
     }
 }
 
-class Form extends React.Component {
-    render() {
-        return ( 
-            <form>
-                <input placeholder="Nome"></input>
-                <input placeholder="E-mail"></input>
-                <input placeholder="Telefone"></input>
-                <input placeholder="Mensagem"></input>
-                <button>Enviar Mensagem</button>
-            </form>
-        );
-    }
-}
-
 class Contato extends React.Component {
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+        alert(`
+            Valores do Formulário:  
+            
+            Nome => ${e.target[0].value || "Não Foi Preenchido"}
+            E-mail => ${e.target[1].value || "Não Foi Preenchido"}
+            Telefone => ${e.target[2].value || "Não Foi Preenchido"}
+            Mensagem => ${e.target[3].value || "Não Foi Preenchido"}
+        `)
+    };
+
     render() {
         return ( 
-            <section>
-                <div>
-                    <h3>Entre em contato </h3>
-                    <Form/>
-                </div>
+            <section className="container-contact">
+                <h3>Entre em contato </h3>
+                <form onSubmit={this.handleSubmit}>
+                    <input placeholder="Nome"></input>
+                    <input placeholder="E-mail"></input>
+                    <input placeholder="Telefone"></input>
+                    <textarea placeholder="Mensagem"></textarea>
+                    <button>Enviar Mensagem</button>
+                </form>
             </section>
         );
     }

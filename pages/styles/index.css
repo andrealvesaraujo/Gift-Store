@@ -23,10 +23,10 @@
     width: 100%;
     padding: 5.5rem 2rem 8.8rem 2rem;
 }
-
+/* 
 .content .container-info {
 
-}
+} */
 
 .content .container-header__info h2 {
     color: var(--title);
@@ -129,6 +129,73 @@
     font-family: "Lato-Regular";
     font-size: 1.8rem;
     line-height: 3rem;
+}
+
+.content .container-contact {
+    background-color: var(--bgSite);
+    padding: 8rem 2rem;
+}
+
+.content .container-contact h3{
+    color: var(--title);
+    font-family: "Merriweather-Regular";
+    font-size: 3.2rem;
+    line-height: 4rem;
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.content .container-contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+.content .container-contact input {
+    font-family: "Lato-Regular";
+    background-color: var(--white);
+    padding: 2rem;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    color: var(--text);
+    outline: none;
+    margin-bottom: 2rem;
+    border-radius: .5rem;
+}
+
+.content .container-contact input::placeholder {
+    color: rgba(110, 114, 117, 0.74);
+}
+
+.content .container-contact textarea {
+    font-family: "Lato-Regular";
+    background-color: var(--white);
+    padding: 2rem 2rem 10rem 2rem;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    color: var(--text);
+    outline: none;
+    margin-bottom: 4.5rem;
+    border-radius: .5rem;
+    border:none;
+    resize: none;
+
+}
+
+.content .container-contact textarea::placeholder{
+    color: rgba(110, 114, 117, 0.74);
+}
+
+.content .container-header__info button, .content .container-contact button {
+    background-color: var(--buttonColor);
+    border-radius: .5rem;
+    box-shadow: 0px .5rem .5rem rgba(23, 23, 23, 0.1);
+    color: var(--white);
+    font-family: "Lato-Regular";
+    font-size: 2rem;
+    line-height: 2.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 1.5rem 5rem;
 }
 
 @media(min-width:767.98) {
