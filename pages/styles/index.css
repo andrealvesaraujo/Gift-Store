@@ -198,6 +198,9 @@
     padding: 1.5rem 5rem;
 }
 
-@media(min-width:767.98) {
-    /* TO DO DESTKOP */
+@media(min-width: 767.98px) {
+    .content .container-contact form {
+        max-width: 47rem;
+        margin: auto;
+    }
 }
