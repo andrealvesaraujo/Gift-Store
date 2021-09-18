@@ -22,11 +22,8 @@
     background-color: var(--bgSite);
     width: 100%;
     padding: 5.5rem 2rem 8.8rem 2rem;
+    text-align: center;
 }
-/* 
-.content .container-info {
-
-} */
 
 .content .container-header__info h2 {
     color: var(--title);
@@ -199,6 +196,22 @@
 }
 
 @media(min-width: 767.98px) {
+
+    .content .container-header {
+        display: flex;
+        align-items: center;
+        padding: 8rem 8rem 8rem 8rem;
+        text-align: initial;
+        
+    }
+
+    .content .container-header__img {
+        background-size: contain;
+        min-width: 35rem;
+        background-position: right;
+        margin: 0 0px 0 1.5rem;
+    }
+
     .content .container-contact form {
         max-width: 47rem;
         margin: auto;
