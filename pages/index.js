@@ -1,13 +1,22 @@
 import React from "react";
 
 class Header extends React.Component {
+
+    handleClick = (e) => {
+        alert(`
+            Bem-vindo a minha loja de Presentes em Latim
+
+            Boa sorte em entendê-la :)
+        `)
+    };
+
     render() {
         return ( 
             <section className="container-header">
                 <div className="container-header__info">
                     <h2>Lorem ipsum dolor sit amet</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu massa sit amet augue consectetur ullamcorper non ac massa.</p>
-                    <button>Botão</button>
+                    <button onClick={this.handleClick}> Botão </button>
                 </div>
                 <div className="container-header__img"></div>
             </section>
