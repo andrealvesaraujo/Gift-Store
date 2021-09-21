@@ -14,6 +14,7 @@
     src: local("Merriweather-Bold"), url("../fonts/Merriweather-Bold.ttf") format("truetype");
 }
 
+
 .content {
     font-family: "Merriweather-Regular";
 }
@@ -66,10 +67,6 @@
 .content .container-cards {
     background-color: var(--white300);
     padding: 7.5rem 2rem;
-    /* display: grid;
-    grid-column-gap: 5rem;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-    grid-row-gap: 3rem; */
 }
 
 .content .container-cards .card {
@@ -80,7 +77,6 @@
 
 .content .container-cards .card .area {
     min-height: 20rem;
-    background: #FF6363;
 }
 
 .content .container-cards .card .area.red {
@@ -211,6 +207,31 @@
         background-position: right;
         margin: 0 0px 0 1.5rem;
     }
+
+    .content .container-cards ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .content .container-cards ul li {
+        transform: scale(1.0);
+        transition: .5s ease-in-out transform;
+    }
+
+
+    .content .container-cards ul li:hover {
+        transform: scale(1.1);
+        transition: .5s ease-in-out transform;
+    }
+    
+
+    .content .container-cards .card {
+        max-width: 34rem;
+        margin: 1.5rem 1rem 1.5rem 1rem;
+    }
+
 
     .content .container-contact form {
         max-width: 47rem;
