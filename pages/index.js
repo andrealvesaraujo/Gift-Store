@@ -16,9 +16,9 @@ class Header extends React.Component {
             <section className="container-header">
                 <Fade left>
                     <div className="container-header__info">
-                        <h2>Lorem ipsum dolor sit amet</h2>
+                        <h2>Bem-vindo a Nerd Store</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu massa sit amet augue consectetur ullamcorper non ac massa.</p>
-                        <button onClick={this.handleClick}> Botão </button>
+                        <button onClick={this.handleClick}> Aviso </button>
                     </div>
                     <div className="container-header__img"></div>
                 </Fade>
@@ -35,7 +35,7 @@ class Card extends React.Component {
                 <div className="card">
                     <div className={`area ${this.props.color}`}></div>
                     <div className="text">
-                        <h2>Titulo do Card</h2>
+                        <h2>{this.props.titulo}</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in neque et nisl.</p>
                     </div>
                 </div>  
@@ -49,12 +49,12 @@ class Cards extends React.Component {
         return ( 
             <section className="container-cards">
                 <ul>
-                    <li><Card color={"red"}/></li>
-                    <li><Card color={"blue"}/></li>
-                    <li><Card color={"pink"}/></li>
-                    <li><Card color={"green"}/></li>
-                    <li><Card color={"yelow"}/></li>
-                    <li><Card color={"purple"}/></li>
+                    <li><Card color={"red"} titulo={"Keyblade"}/></li>
+                    <li><Card color={"blue"} titulo={"Digivice"}/></li>
+                    <li><Card color={"pink"} titulo={"Pokebola"}/></li>
+                    <li><Card color={"green"} titulo={"Escudo América"}/></li>
+                    <li><Card color={"yelow"} titulo={"Mjölnir"}/></li>
+                    <li><Card color={"purple"} titulo={"Manopla do Infinito"}/></li>
                 </ul>
             </section>
         );
