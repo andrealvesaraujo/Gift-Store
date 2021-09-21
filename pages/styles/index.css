@@ -95,30 +95,33 @@
 
 .content .container-cards .card .area {
     min-height: 20rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .content .container-cards .card .area.red {
-    background: #FF6363;
+    background-image: url("../images/keyblade.jpg");
 }
 
 .content .container-cards .card .area.blue {
-    background: #63ECFF;
+    background-image: url("../images/digivice.jpeg");
 }
 
 .content .container-cards .card .area.pink {
-    background: #F363FF;
+    background-image: url("../images/pokebola.png");
 }
 
 .content .container-cards .card .area.green {
-    background: #63FF73;
+    background-image: url("../images/escudo.jpeg");
 }
 
 .content .container-cards .card .area.yelow {
-    background: #FFDD63;
+    background-image: url("../images/martelo.jpeg");
 }
 
 .content .container-cards .card .area.purple {
-    background: #6663FF;
+    background-image: url("../images/manopla.jpeg");
 }
 
 
