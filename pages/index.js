@@ -1,28 +1,78 @@
 import React from "react";
 import Fade from 'react-reveal/Fade';
 
-class Header extends React.Component {
+class ModalHeader extends React.Component {
+
+    constructor(props) {
+        super(props)
+    }
 
     handleClick = (e) => {
-        alert(`
-            Bem-vindo a minha loja de Presentes em Latim
+        this.props.parentCallBack()
+    };
 
-            Boa sorte em entendê-la :)
-        `)
+    render() {
+        return (
+            <>
+                {this.props.show && ( 
+                    <div className="modal">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h3> HELLO </h3>
+                            </div>
+                            <div className="modal-body">
+                                Bem-vindo a minha loja de Presentes em Latim
+                                <br/>
+                                Boa sorte em entendê-la :)
+                            </div>
+                            <div className="modal-footer">
+                                <button onClick={this.handleClick}>Close</button>
+                            </div>
+                        </div>
+                    </div> 
+                )} 
+            </>
+            
+        )      
+    }
+}
+
+class Header extends React.Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            show: false
+        }
+    }
+
+    handleClick = (e) => {
+        this.setState({
+            show: true
+        })
+    };
+
+    callbackFunction = (childData) => {
+        this.setState({
+            show: false
+        })
     };
 
     render() {
         return ( 
-            <section className="container-header">
-                <Fade left>
-                    <div className="container-header__info">
-                        <h2>Bem-vindo a Nerd Store</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu massa sit amet augue consectetur ullamcorper non ac massa.</p>
-                        <button onClick={this.handleClick}> Aviso </button>
-                    </div>
-                    <div className="container-header__img"></div>
-                </Fade>
-            </section>
+            <>
+                <ModalHeader parentCallBack={this.callbackFunction} show={this.state.show} />
+                <section className="container-header">
+                    <Fade left>
+                        <div className="container-header__info">
+                            <h2>Bem-vindo a Nerd Store</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu massa sit amet augue consectetur ullamcorper non ac massa.</p>
+                            <button onClick={this.handleClick}> Aviso </button>
+                        </div>
+                        <div className="container-header__img"></div>
+                    </Fade>
+                </section>
+            </>            
         );
     }
 }
@@ -61,6 +111,10 @@ class Cards extends React.Component {
     }
 }
 
+// class ModalContato extends React.Component {
+    
+// }
+
 class Contato extends React.Component {
 
     handleSubmit = (e) => {
@@ -73,6 +127,11 @@ class Contato extends React.Component {
             Telefone => ${e.target[2].value || "Não Foi Preenchido"}
             Mensagem => ${e.target[3].value || "Não Foi Preenchido"}
         `)
+        e.target[0].value = ""
+        e.target[1].value = ""
+        e.target[2].value = ""
+        e.target[3].value = ""
+
     };
 
     render() {
