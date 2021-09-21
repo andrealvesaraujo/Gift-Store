@@ -15,6 +15,24 @@
 }
 
 
+::-webkit-scrollbar {
+    width: 1rem;
+}
+  
+::-webkit-scrollbar-track {
+    background: #a39ceb;
+    border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--buttonColor);
+    border-radius: 1rem;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: blue;
+}
+
 .content {
     font-family: "Merriweather-Regular";
 }
