@@ -19,7 +19,7 @@ class ModalHeader extends React.Component {
                         <div className="modal">
                             <div className="modal-content">
                                 <div className="modal-header">
-                                    <h3> Bem-Vindo </h3>
+                                    <h3> { this.props.title || "Bem-Vindo"} </h3>
                                 </div>
                                 <div className="modal-body">
                                     Essa é a minha loja Nerd de Presentes em Latim
@@ -92,24 +92,60 @@ class Card extends React.Component {
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in neque et nisl.</p>
                     </div>
                 </div>  
-            </Fade>
+            </Fade> 
         );
     }
 }
 
 class Cards extends React.Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            show: false,
+        }
+    }
+
+    handleClick = (e) => {
+        this.setState({
+            show: true,
+        })
+    };
+
+    callbackFunction = (childData) => {
+        this.setState({
+            show: false
+        })
+    };
+
+
     render() {
         return ( 
-            <section className="container-cards">
-                <ul>
-                    <li><Card color={"red"} titulo={"Keyblade"}/></li>
-                    <li><Card color={"blue"} titulo={"Digivice"}/></li>
-                    <li><Card color={"pink"} titulo={"Pokebola"}/></li>
-                    <li><Card color={"green"} titulo={"Escudo América"}/></li>
-                    <li><Card color={"yelow"} titulo={"Mjölnir"}/></li>
-                    <li><Card color={"purple"} titulo={"Manopla do Infinito"}/></li>
-                </ul>
-            </section>
+            <>
+                <ModalHeader title={this.state.title} parentCallBack={this.callbackFunction} show={this.state.show} />
+                <section className="container-cards">
+                    <ul>
+                        <li onClick={this.handleClick} titulo={"Keyblade"}>
+                            <Card color={"red"} titulo={"Keyblade"}/>
+                        </li>
+                        <li onClick={this.handleClick}>
+                            <Card color={"blue"} titulo={"Digivice"}/>
+                        </li>
+                        <li onClick={this.handleClick}>
+                            <Card color={"pink"} titulo={"Pokebola"}/>
+                        </li>
+                        <li onClick={this.handleClick}>
+                            <Card color={"green"} titulo={"Escudo América"}/>
+                        </li>
+                        <li onClick={this.handleClick}>
+                            <Card color={"yelow"} titulo={"Mjölnir"}/>
+                        </li>
+                        <li onClick={this.handleClick}>
+                            <Card color={"purple"} titulo={"Manopla do Infinito"}/>
+                        </li>
+                    </ul>
+                </section>
+            </>
         );
     }
 }
