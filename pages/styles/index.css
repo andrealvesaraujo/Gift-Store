@@ -37,6 +37,59 @@
     font-family: "Merriweather-Regular";
 }
 
+
+
+.content .modal {
+    position: fixed;
+    left: 0;     
+    top: 0;     
+    right: 0;     
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;     
+    z-index: 5;
+    text-align: center;
+}
+
+.content .modal .modal-content {
+    background-color: #fff; 
+    width: 100%;
+}
+
+.content .modal .modal-header{
+    padding: 1rem;   
+}
+
+.content .modal .modal-header h3{
+   margin: 0;  
+   font-size: 2.4rem;
+}
+
+.content .modal .modal-body {
+    padding: 1rem;
+    border-top: 1px solid var(--buttonColor);
+    border-bottom: 1px solid var(--buttonColor); 
+}
+
+.content .modal .modal-footer {
+    padding: 1rem;   
+}
+
+.content .modal .modal-footer button {
+    background-color: var(--buttonColor);
+    border-radius: .5rem;
+    box-shadow: 0px .5rem .5rem rgba(23, 23, 23, 0.1);
+    color: var(--white);
+    font-family: "Lato-Regular";
+    font-size: 1.8rem;
+    line-height: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 1.5rem 2.5rem;
+}
+
 .content .container-header {
     background-color: var(--bgSite);
     width: 100%;
@@ -215,52 +268,14 @@
 @media(min-width: 767.98px) {
 
     .content .modal {
-        position: fixed;
-        left: 0;     
-        top: 0;     
-        right: 0;     
-        bottom: 0;
-        background-color: rgba(0,0,0,0.5);
         display: flex;
         align-items: center;
         justify-content: center;     
-        z-index: 5;
     }
-
+    
     .content .modal .modal-content {
         width: 50rem;
-        background-color: #fff; 
-    }
-
-    .content .modal .modal-header{
-        padding: 1rem;   
-    }
-
-    .content .modal .modal-header h3{
-       margin: 0;  
-    }
-
-    .content .modal .modal-body {
-        padding: 1rem;
-        border-top: 1px solid #eee;
-        border-bottom: 1px solid #eee; 
-    }
-
-    .content .modal .modal-footer {
-        padding: 1rem;   
-    }
-
-    .content .modal .modal-footer button{
-        background-color: var(--buttonColor);
         border-radius: .5rem;
-        box-shadow: 0px .5rem .5rem rgba(23, 23, 23, 0.1);
-        color: var(--white);
-        font-family: "Lato-Regular";
-        font-size: 1.8rem;
-        line-height: 1rem;
-        font-weight: bold;
-        cursor: pointer;
-        padding: 1.5rem 2.5rem;
     }
 
     .content .container-header {

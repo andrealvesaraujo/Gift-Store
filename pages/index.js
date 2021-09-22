@@ -15,21 +15,24 @@ class ModalHeader extends React.Component {
         return (
             <>
                 {this.props.show && ( 
-                    <div className="modal">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h3> HELLO </h3>
+                    <Fade zoom>
+                        <div className="modal">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h3> Bem-Vindo </h3>
+                                </div>
+                                <div className="modal-body">
+                                    Essa é a minha loja Nerd de Presentes em Latim
+                                    <br/>
+                                    <br/>
+                                    Boa sorte em entendê-la :)
+                                </div>
+                                <div className="modal-footer">
+                                    <button onClick={this.handleClick}>Fechar</button>
+                                </div>
                             </div>
-                            <div className="modal-body">
-                                Bem-vindo a minha loja de Presentes em Latim
-                                <br/>
-                                Boa sorte em entendê-la :)
-                            </div>
-                            <div className="modal-footer">
-                                <button onClick={this.handleClick}>Close</button>
-                            </div>
-                        </div>
-                    </div> 
+                        </div> 
+                    </Fade>
                 )} 
             </>
             
