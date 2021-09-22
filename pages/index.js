@@ -31,6 +31,19 @@ class Modal extends React.Component {
                                             </>
                                         )
                                     }
+                                    { this.props.isForm && 
+                                        (
+                                            <>
+                                                <h3>Valores do Formulário:</h3>
+                                                <br/>
+                                                <div>Nome: {this.props.name}</div>
+                                                <div>Email: {this.props.email}</div>
+                                                <div>Telefone: {this.props.phone}</div>
+                                                <div>Message: {this.props.message}</div>
+                                                <br/>
+                                            </>
+                                        )
+                                    }
                                     {/* Fazer if do Is form com info do form contact */}
                                     { !this.props.isProduct && !this.props.isForm && (
                                             <>
@@ -178,37 +191,59 @@ class Cards extends React.Component {
 
 class Contato extends React.Component {
 
-    handleSubmit = (e) => {
-        e.preventDefault()
-        alert(`
-            Valores do Formulário:  
-            
-            Nome => ${e.target[0].value || "Não Foi Preenchido"}
-            E-mail => ${e.target[1].value || "Não Foi Preenchido"}
-            Telefone => ${e.target[2].value || "Não Foi Preenchido"}
-            Mensagem => ${e.target[3].value || "Não Foi Preenchido"}
-        `)
-        e.target[0].value = ""
-        e.target[1].value = ""
-        e.target[2].value = ""
-        e.target[3].value = ""
+    constructor(props) {
+        super(props)
+        this.state = {
+            show: false,
+            name:"",            
+            email:"",            
+            phone:"",            
+            message:"",            
+        }
+    }
 
+    callbackFunction = (childData) => {
+        this.setState({
+            show: false
+        })
+    };
+
+    handleSubmit = (e, title, price) => {
+        e.preventDefault()
+        this.setState({
+            show: true,
+            name: e.target[0].value || "Não Foi Preenchido",            
+            email:e.target[1].value || "Não Foi Preenchido",            
+            phone:e.target[2].value || "Não Foi Preenchido",            
+            message:e.target[3].value || "Não Foi Preenchido",
+        })
     };
 
     render() {
         return ( 
-            <section className="container-contact">
-                <Fade left>
-                    <h3>Entre em contato </h3>
-                    <form onSubmit={this.handleSubmit}>
-                        <input placeholder="Nome"></input>
-                        <input placeholder="E-mail"></input>
-                        <input placeholder="Telefone"></input>
-                        <textarea placeholder="Mensagem"></textarea>
-                        <button>Enviar Mensagem</button>
-                    </form>                    
-                </Fade>
-            </section>
+            <>
+                <Modal 
+                        parentCallBack={this.callbackFunction} 
+                        show={this.state.show}
+                        name = {this.state.name}
+                        email = {this.state.email}
+                        phone = {this.state.phone}
+                        message = {this.state.message}
+                        isForm = {true}
+                />                
+                <section className="container-contact">
+                    <Fade left>
+                        <h3>Entre em contato </h3>
+                        <form onSubmit={this.handleSubmit}>
+                            <input placeholder="Nome"></input>
+                            <input placeholder="E-mail"></input>
+                            <input placeholder="Telefone"></input>
+                            <textarea placeholder="Mensagem"></textarea>
+                            <button>Enviar Mensagem</button>
+                        </form>                    
+                    </Fade>
+                </section>
+            </>
         );
     }
 }
