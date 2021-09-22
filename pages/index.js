@@ -1,15 +1,11 @@
 import React from "react";
 import Fade from 'react-reveal/Fade';
 
-class ModalHeader extends React.Component {
-
+class Modal extends React.Component {
+    
     constructor(props) {
         super(props)
     }
-
-    handleClick = (e) => {
-        this.props.parentCallBack()
-    };
 
     render() {
         return (
@@ -19,23 +15,39 @@ class ModalHeader extends React.Component {
                         <div className="modal">
                             <div className="modal-content">
                                 <div className="modal-header">
-                                    <h3> { this.props.title || "Bem-Vindo"} </h3>
+                                    <h3> { this.props.isProduct ? `Comprando ${this.props.title}` : "Bem-Vindo"} </h3>
                                 </div>
                                 <div className="modal-body">
-                                    Essa é a minha loja Nerd de Presentes em Latim
-                                    <br/>
-                                    <br/>
-                                    Boa sorte em entendê-la :)
+                                    {this.props.isProduct && 
+                                        (
+                                            <>
+                                                <h3>Excelente Escolha</h3>
+                                                <br/>
+                                                <div>Presente: {this.props.title}</div>
+                                                <div>Preço: {this.props.price}</div>
+                                                <div>Taxa de Entrega Interdimensional: {10000.99}</div>
+                                                <div>Total: { parseInt(this.props.price)+10000.99}</div>
+                                                <br/>
+                                            </>
+                                        )
+                                    }
+                                    {/* Fazer if do Is form com info do form contact */}
+                                    { !this.props.isProduct && !this.props.isForm && (
+                                            <>
+                                                <div>Essa é a minha loja Nerd de Presentes em Latim</div>
+                                                <div>Boa sorte em entendê-la :)</div>
+                                            </>
+                                        )
+                                    }
                                 </div>
                                 <div className="modal-footer">
-                                    <button onClick={this.handleClick}>Fechar</button>
+                                    <button onClick={() => this.props.parentCallBack()}>{ this.props.isProduct ? "Comprar" : "Fechar"}</button>
                                 </div>
                             </div>
                         </div> 
                     </Fade>
                 )} 
-            </>
-            
+            </>            
         )      
     }
 }
@@ -64,7 +76,7 @@ class Header extends React.Component {
     render() {
         return ( 
             <>
-                <ModalHeader parentCallBack={this.callbackFunction} show={this.state.show} />
+                <Modal parentCallBack={this.callbackFunction} show={this.state.show} />
                 <section className="container-header">
                     <Fade left>
                         <div className="container-header__info">
@@ -85,11 +97,11 @@ class Card extends React.Component {
     render() {
         return ( 
             <Fade left>                    
-                <div className="card">
-                    <div className={`area ${this.props.color}`}></div>
-                    <div className="text">
-                        <h2>{this.props.titulo}</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in neque et nisl.</p>
+                <div id="principal" className="card">
+                    <div id="card-img" className={`area ${this.props.color}`}></div>
+                    <div id="card-text" className="text">
+                        <h2 id="card-h2">{this.props.titulo}</h2>
+                        <p id="card-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in neque et nisl.</p>
                     </div>
                 </div>  
             </Fade> 
@@ -103,12 +115,16 @@ class Cards extends React.Component {
         super(props)
         this.state = {
             show: false,
+            title: "",
+            price: ""
         }
     }
 
-    handleClick = (e) => {
+    handleClick = (title, price) => {
         this.setState({
             show: true,
+            title,
+            price
         })
     };
 
@@ -122,25 +138,31 @@ class Cards extends React.Component {
     render() {
         return ( 
             <>
-                <ModalHeader title={this.state.title} parentCallBack={this.callbackFunction} show={this.state.show} />
+                <Modal 
+                    title={this.state.title}
+                    price = {this.state.price} 
+                    parentCallBack={this.callbackFunction} 
+                    show={this.state.show}
+                    isProduct = {true} 
+                />
                 <section className="container-cards">
                     <ul>
-                        <li onClick={this.handleClick} titulo={"Keyblade"}>
+                        <li onClick={()=>this.handleClick("Keyblade", "100,00")}>
                             <Card color={"red"} titulo={"Keyblade"}/>
                         </li>
-                        <li onClick={this.handleClick}>
+                        <li onClick={()=>this.handleClick("Digivice", "150,00")}>
                             <Card color={"blue"} titulo={"Digivice"}/>
                         </li>
-                        <li onClick={this.handleClick}>
+                        <li onClick={()=>this.handleClick("Pokebola", "200,00")}>
                             <Card color={"pink"} titulo={"Pokebola"}/>
                         </li>
-                        <li onClick={this.handleClick}>
+                        <li onClick={()=>this.handleClick("Escudo América", "300,00")}>
                             <Card color={"green"} titulo={"Escudo América"}/>
                         </li>
-                        <li onClick={this.handleClick}>
+                        <li onClick={()=>this.handleClick("Mjölnir", "500,00")}>
                             <Card color={"yelow"} titulo={"Mjölnir"}/>
                         </li>
-                        <li onClick={this.handleClick}>
+                        <li onClick={()=>this.handleClick("Manopla do Infinito", "1000,00")}>
                             <Card color={"purple"} titulo={"Manopla do Infinito"}/>
                         </li>
                     </ul>
