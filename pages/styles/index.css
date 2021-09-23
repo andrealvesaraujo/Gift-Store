@@ -14,7 +14,6 @@
     src: local("Merriweather-Bold"), url("../fonts/Merriweather-Bold.ttf") format("truetype");
 }
 
-
 ::-webkit-scrollbar {
     width: 1rem;
 }
@@ -36,8 +35,6 @@
 .content {
     font-family: "Merriweather-Regular";
 }
-
-
 
 .content .modal {
     position: fixed;
@@ -71,6 +68,7 @@
     padding: 1rem;
     border-top: 1px solid var(--buttonColor);
     border-bottom: 1px solid var(--buttonColor); 
+    word-break: break-word;
 }
 
 .content .modal .modal-footer {
@@ -89,6 +87,11 @@
     cursor: pointer;
     padding: 1.5rem 2.5rem;
 }
+
+.content .modal .modal-footer button:hover {
+    background-color: #5d57b1;
+}
+
 
 .content .container-header {
     background-color: var(--bgSite);
@@ -230,6 +233,10 @@
     border-radius: .5rem;
 }
 
+.content .container-contact input:hover {
+    background-color: #ffffff8a ;
+}
+
 .content .container-contact input::placeholder {
     color: rgba(110, 114, 117, 0.74);
 }
@@ -246,7 +253,10 @@
     border-radius: .5rem;
     border:none;
     resize: none;
+}
 
+.content .container-contact textarea:hover {
+    background-color: #ffffff8a ;
 }
 
 .content .container-contact textarea::placeholder{
@@ -264,6 +274,10 @@
     font-weight: bold;
     cursor: pointer;
     padding: 1.5rem 5rem;
+}
+
+.content .container-header__info button:hover, .content .container-contact button:hover {
+    background-color: #5d57b1;
 }
 
 @media(min-width: 767.98px) {

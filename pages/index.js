@@ -15,26 +15,27 @@ class Modal extends React.Component {
                         <div className="modal">
                             <div className="modal-content">
                                 <div className="modal-header">
-                                    <h3> { this.props.isProduct ? `Comprando ${this.props.title}` : "Bem-Vindo"} </h3>
+                                    <h3> { this.props.isProduct ? `Comprando ${this.props.title}` : (this.props.isForm ? "Obrigado por nos contatar" : "Bem-Vindo") } </h3>
                                 </div>
                                 <div className="modal-body">
                                     {this.props.isProduct && 
                                         (
                                             <>
-                                                <h3>Excelente Escolha</h3>
+                                                <h4>Excelente Escolha</h4>
                                                 <br/>
-                                                <div>Presente: {this.props.title}</div>
-                                                <div>Preço: {this.props.price}</div>
-                                                <div>Taxa de Entrega Interdimensional: {10000.99}</div>
-                                                <div>Total: { parseInt(this.props.price)+10000.99}</div>
+                                                <h5>Presente: {this.props.title}</h5>
+                                                <br/>
+                                                <div>Preço: R$ {parseInt(this.props.price)}</div>
+                                                <div>Taxa de Entrega Interdimensional: R$ {1000.00}</div>
+                                                <div>Total: R$ { parseInt(this.props.price) + 1000.00}</div>
                                                 <br/>
                                             </>
                                         )
                                     }
-                                    { this.props.isForm && 
+                                    {this.props.isForm && 
                                         (
                                             <>
-                                                <h3>Valores do Formulário:</h3>
+                                                <h4>Valores do Formulário:</h4>
                                                 <br/>
                                                 <div>Nome: {this.props.name}</div>
                                                 <div>Email: {this.props.email}</div>
@@ -47,14 +48,19 @@ class Modal extends React.Component {
                                     {/* Fazer if do Is form com info do form contact */}
                                     { !this.props.isProduct && !this.props.isForm && (
                                             <>
-                                                <div>Essa é a minha loja Nerd de Presentes em Latim</div>
+                                                <h4>Essa é a minha loja Nerd de Presentes em Latim</h4>
+                                                <br/>
                                                 <div>Boa sorte em entendê-la :)</div>
+                                                <br/>
+                                                <div>Convido a clicar nos meus produtos</div>
+                                                <div>Preencha o formulário no final para entrar em contato</div>
+                                                <br/>
                                             </>
                                         )
                                     }
                                 </div>
                                 <div className="modal-footer">
-                                    <button onClick={() => this.props.parentCallBack()}>{ this.props.isProduct ? "Comprar" : "Fechar"}</button>
+                                    <button onClick={() => this.props.parentCallBack()}>{ this.props.isProduct ? "Comprar" :  (this.props.isForm ? "Enviar" : "Fechar")}</button>
                                 </div>
                             </div>
                         </div> 
@@ -204,7 +210,11 @@ class Contato extends React.Component {
 
     callbackFunction = (childData) => {
         this.setState({
-            show: false
+            show: false,
+            name:"",            
+            email:"",            
+            phone:"",            
+            message:"",  
         })
     };
 
@@ -217,6 +227,10 @@ class Contato extends React.Component {
             phone:e.target[2].value || "Não Foi Preenchido",            
             message:e.target[3].value || "Não Foi Preenchido",
         })
+        e.target[0].value = ""
+        e.target[1].value = ""
+        e.target[2].value = ""
+        e.target[3].value = ""
     };
 
     render() {
