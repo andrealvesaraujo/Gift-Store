@@ -6,7 +6,7 @@ Desafio 3 da Codelandia
 https://www.figma.com/file/Yb9IBH56g7T1hdIyZ3BMNO/Desafios---Codel%C3%A2ndia?node-id=3738%3A2
 
 ## Feito com :
-React, React Reveal, Next
+React, React Reveal, Node.js, Next
 
 ## Preview:
 
