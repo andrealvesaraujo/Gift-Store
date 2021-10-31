@@ -5,7 +5,7 @@ Third Dev Challenge of Codelândia: One Login Page for users.
 ## Figma Prototype
 https://www.figma.com/file/Yb9IBH56g7T1hdIyZ3BMNO/Desafios---Codel%C3%A2ndia?node-id=3738%3A2
 
-## Tecnologies :
+## Technologies :
 React, React Reveal, Node.js, Next
 
 ## Preview:
