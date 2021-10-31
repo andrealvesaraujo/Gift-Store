@@ -1,11 +1,11 @@
 # Gift-Store
 
-Desafio 3 da Codelandia
+Third Dev Challenge of Codelândia: One Login Page for users.
 
-## Prototype: 
+## Figma Prototype
 https://www.figma.com/file/Yb9IBH56g7T1hdIyZ3BMNO/Desafios---Codel%C3%A2ndia?node-id=3738%3A2
 
-## Feito com :
+## Tecnologies :
 React, React Reveal, Node.js, Next
 
 ## Preview:
