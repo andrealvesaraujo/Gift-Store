@@ -1,6 +1,6 @@
 # Gift-Store
 
-Third Dev Challenge of Codelândia: One Login Page for users.
+Third Dev Challenge of Codelândia: One Gift Store Page for users.
 
 ## Figma Prototype
 https://www.figma.com/file/Yb9IBH56g7T1hdIyZ3BMNO/Desafios---Codel%C3%A2ndia?node-id=3738%3A2
