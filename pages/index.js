@@ -4,7 +4,7 @@ import Fade from 'react-reveal/Fade';
 class Modal extends React.Component {
 
     componentDidMount(){
-        document.title = "NERD SHOP"
+        document.title = "Gift-Store"
       }
     
     constructor(props) {
