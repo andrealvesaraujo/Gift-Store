@@ -2,6 +2,10 @@ import React from "react";
 import Fade from 'react-reveal/Fade';
 
 class Modal extends React.Component {
+
+    componentDidMount(){
+        document.title = "Gift-Store"
+      }
     
     constructor(props) {
         super(props)
@@ -15,18 +19,18 @@ class Modal extends React.Component {
                         <div className="modal">
                             <div className="modal-content">
                                 <div className="modal-header">
-                                    <h3> { this.props.isProduct ? `Comprando ${this.props.title}` : (this.props.isForm ? "Obrigado por nos contatar" : "Bem-Vindo") } </h3>
+                                    <h3> { this.props.isProduct ? `Shopping ${this.props.title}` : (this.props.isForm ? "Thanks for contacting us" : "Welcome") } </h3>
                                 </div>
                                 <div className="modal-body">
                                     {this.props.isProduct && 
                                         (
                                             <>
-                                                <h4>Excelente Escolha</h4>
+                                                <h4>Excellent choice</h4>
                                                 <br/>
-                                                <h5>Presente: {this.props.title}</h5>
+                                                <h5>Gift: {this.props.title}</h5>
                                                 <br/>
-                                                <div>Preço: R$ {parseInt(this.props.price)}</div>
-                                                <div>Taxa de Entrega Interdimensional: R$ {1000.00}</div>
+                                                <div>Price: R$ {parseInt(this.props.price)}</div>
+                                                <div>International Delivery Fee: BRL {1000.00}</div>
                                                 <div>Total: R$ { parseInt(this.props.price) + 1000.00}</div>
                                                 <br/>
                                             </>
@@ -35,11 +39,11 @@ class Modal extends React.Component {
                                     {this.props.isForm && 
                                         (
                                             <>
-                                                <h4>Valores do Formulário:</h4>
+                                                <h4>Your Answer:</h4>
                                                 <br/>
-                                                <div>Nome: {this.props.name}</div>
+                                                <div>Name: {this.props.name}</div>
                                                 <div>Email: {this.props.email}</div>
-                                                <div>Telefone: {this.props.phone}</div>
+                                                <div>Phone Number: {this.props.phone}</div>
                                                 <div>Message: {this.props.message}</div>
                                                 <br/>
                                             </>
@@ -48,19 +52,19 @@ class Modal extends React.Component {
                                     {/* Fazer if do Is form com info do form contact */}
                                     { !this.props.isProduct && !this.props.isForm && (
                                             <>
-                                                <h4>Essa é a minha loja Nerd de Presentes em Latim</h4>
+                                                <h4>This is my Nerd Gift Shop in English</h4>
                                                 <br/>
-                                                <div>Boa sorte em entendê-la :)</div>
+                                                <div>Good luck figuring it out :)</div>
                                                 <br/>
-                                                <div>Convido a clicar nos meus produtos</div>
-                                                <div>Preencha o formulário no final para entrar em contato</div>
+                                                <div>I invite you to click on my products</div>
+                                                <div>Fill in the form at the end to get in touch</div>
                                                 <br/>
                                             </>
                                         )
                                     }
                                 </div>
                                 <div className="modal-footer">
-                                    <button onClick={() => this.props.parentCallBack()}>{ this.props.isProduct ? "Comprar" :  (this.props.isForm ? "Enviar" : "Fechar")}</button>
+                                    <button onClick={() => this.props.parentCallBack()}>{ this.props.isProduct ? "Purchase" :  (this.props.isForm ? "Enviar" : "close")}</button>
                                 </div>
                             </div>
                         </div> 
@@ -99,9 +103,9 @@ class Header extends React.Component {
                 <section className="container-header">
                     <Fade left>
                         <div className="container-header__info">
-                            <h2>Bem-vindo a Nerd Store</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu massa sit amet augue consectetur ullamcorper non ac massa.</p>
-                            <button onClick={this.handleClick}> Aviso </button>
+                            <h2>Welcome to Nerd Store</h2>
+                            <p>a store primarily selling souvenirs, memorabilia, and other items relating to a particular topic or theme</p>
+                            <button onClick={this.handleClick}> Click Me </button>
                         </div>
                         <div className="container-header__img"></div>
                     </Fade>
@@ -119,8 +123,8 @@ class Card extends React.Component {
                 <div id="principal" className="card">
                     <div id="card-img" className={`area ${this.props.color}`}></div>
                     <div id="card-text" className="text">
-                        <h2 id="card-h2">{this.props.titulo}</h2>
-                        <p id="card-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in neque et nisl.</p>
+                        <h2 id="card-h2">{this.props.titulo}</h2>Since some online shoppers only scan text on websites, it might be helpful to use bullet points that cover the most important product details. Bullet points should generally be used for specs (like dimensions) or short phrases (like features) so they are quick and easy to read.
+                        <p id="card-p"></p>
                     </div>
                 </div>  
             </Fade> 
@@ -169,20 +173,20 @@ class Cards extends React.Component {
                         <li onClick={()=>this.handleClick("Keyblade", "100,00")}>
                             <Card color={"red"} titulo={"Keyblade"}/>
                         </li>
-                        <li onClick={()=>this.handleClick("Digivice", "150,00")}>
-                            <Card color={"blue"} titulo={"Digivice"}/>
+                        <li onClick={()=>this.handleClick("Device", "150,00")}>
+                            <Card color={"blue"} titulo={"Device"}/>
                         </li>
-                        <li onClick={()=>this.handleClick("Pokebola", "200,00")}>
-                            <Card color={"pink"} titulo={"Pokebola"}/>
+                        <li onClick={()=>this.handleClick("Pokéball", "200,00")}>
+                            <Card color={"pink"} titulo={"Pokéball"}/>
                         </li>
-                        <li onClick={()=>this.handleClick("Escudo América", "300,00")}>
-                            <Card color={"green"} titulo={"Escudo América"}/>
+                        <li onClick={()=>this.handleClick("Captain America Shield", "300,00")}>
+                            <Card color={"green"} titulo={"Captain America Shield"}/>
                         </li>
-                        <li onClick={()=>this.handleClick("Mjölnir", "500,00")}>
-                            <Card color={"yelow"} titulo={"Mjölnir"}/>
+                        <li onClick={()=>this.handleClick("Mjollnir", "500,00")}>
+                            <Card color={"yelow"} titulo={"Mjollnir"}/>
                         </li>
-                        <li onClick={()=>this.handleClick("Manopla do Infinito", "1000,00")}>
-                            <Card color={"purple"} titulo={"Manopla do Infinito"}/>
+                        <li onClick={()=>this.handleClick("Infinity Stone", "1000,00")}>
+                            <Card color={"purple"} titulo={"Infinity Stone"}/>
                         </li>
                     </ul>
                 </section>
@@ -222,10 +226,10 @@ class Contato extends React.Component {
         e.preventDefault()
         this.setState({
             show: true,
-            name: e.target[0].value || "Não Foi Preenchido",            
-            email:e.target[1].value || "Não Foi Preenchido",            
-            phone:e.target[2].value || "Não Foi Preenchido",            
-            message:e.target[3].value || "Não Foi Preenchido",
+            name: e.target[0].value || "NULL",            
+            email:e.target[1].value || "NULL",            
+            phone:e.target[2].value || "NULL",            
+            message:e.target[3].value || "NULL",
         })
         e.target[0].value = ""
         e.target[1].value = ""
@@ -247,13 +251,13 @@ class Contato extends React.Component {
                 />                
                 <section className="container-contact">
                     <Fade left>
-                        <h3>Entre em contato </h3>
+                        <h3>Contact Me </h3>
                         <form onSubmit={this.handleSubmit}>
-                            <input placeholder="Nome"></input>
+                            <input placeholder="Name"></input>
                             <input placeholder="E-mail"></input>
-                            <input placeholder="Telefone"></input>
-                            <textarea placeholder="Mensagem"></textarea>
-                            <button>Enviar Mensagem</button>
+                            <input placeholder="Phone Number"></input>
+                            <textarea placeholder="Message"></textarea>
+                            <button>SUBMIT MESSAGE</button>
                         </form>                    
                     </Fade>
                 </section>

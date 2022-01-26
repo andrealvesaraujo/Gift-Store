@@ -115,7 +115,7 @@ To get a local copy up and running follow these simple example steps.
 ## Roadmap
 
 - [x] Add Modal on click of cards and the form contact
-- [ ] Translate text to English
+- [x] Translate text to English
 
 See the [open issues](https://github.com/andrealvesaraujo/Gift-Store/issues) for a full list of proposed features (and known issues).
 
